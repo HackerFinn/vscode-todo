@@ -49,11 +49,11 @@ function activate(context) {
                 statusBarItem = helper.createStatusBarItem();
             }
             if (language === 'All') {
-                statusBarItem.text = 'TODO:s';
+                statusBarItem.text = 'TODO:s ('+todosList.length+')';
             } else {
-                statusBarItem.text = 'TODO:s for ' + usersChoosenLanguage;
+                statusBarItem.text = 'TODO:s for ' + usersChoosenLanguage+' ('+todosList.length+')';
             }
-            statusBarItem.tooltip = 'Show TODO:s for ' + usersChoosenLanguage;
+            statusBarItem.tooltip = 'Show TODO:s for ' + usersChoosenLanguage+'  ('+todosList.length+')';
         });  
     });
 
