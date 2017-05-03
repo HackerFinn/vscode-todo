@@ -1,5 +1,5 @@
 [![GitHub issues](https://img.shields.io/github/issues/HackerFinn/vscode-todo.svg)](https://github.com/HackerFinn/vscode-todo/issues)
-[![Join the chat at https://gitter.im/HackerFinn/vscode-todo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/HackerFinn/vscode-todo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/vscode-todo/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vscode-todo/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # TODO extension for Visual Studio Code
 
