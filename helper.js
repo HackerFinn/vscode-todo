@@ -32,7 +32,8 @@ helper.getFileExludeForLanguage = function(choosenLanguage, workspaceConfig) {
 
 helper.getScanRegexForLanguage = function(choosenLanguage, workspaceConfig) {
     //TODO: Add per-language specific scan expressions
-    var regex = "(?:TODO|FIXME)\\s*\\W{0,1}(\\s+.*|(?:\\w|\\d).*)$";
+    //(?:<\!--|\/\*|\/\/)\s?([Tt][Oo][Dd][Oo])|([Ff][Ii][Xx][Mm][Ee])(?:\s|\s:|:)?\s?([^\n]*)(?:-->|\*\/|)
+    var regex = "(?:<\\!--|\/\\*|\/\/)\\s?([Tt][Oo][Dd][Oo])|([Ff][Ii][Xx][Mm][Ee])(?:\\s|\\s:|:)?\\s?([^\n]*)(?:-->|\\*\/|)";
     if(workspaceConfig.todoScanRegex){
         regex = workspaceConfig.todoScanRegex;
     }
