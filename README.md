@@ -41,7 +41,7 @@ To customize scan expression, create the variable todoScanRegex in your workspac
 
 #### Marketplace
 The extension is published on Visual Studio Codes marketplace at:
-https://marketplace.visualstudio.com/items/MattiasPernhult.vscode-todo
+https://marketplace.visualstudio.com/items/HackerFinn.vscode-todo-renewed
 
 Download the extension with Visual Studio Code by open the command palette and run
 ```bash
@@ -67,7 +67,7 @@ First make sure you do **not** have the extension installed in `~/.vscode/extens
 ```bash
 rm -rf ~/.vscode/extensions/vscode-todo
 cd ~
-git clone https://github.com/MattiasPernhult/vscode-todo
+git clone https://github.com/HackerFinn/vscode-todo
 cd vscode-todo
 npm install
 code . 
