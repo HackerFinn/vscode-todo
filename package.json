@@ -1,8 +1,8 @@
 {
-  "name": "vscode-todo",
+  "name": "vscode-todo-renewed",
   "description": "Lists todo:s in the project",
-  "version": "0.8.0",
-  "publisher": "MattiasPernhult",
+  "version": "0.8.2",
+  "publisher": "HackerFinn",
   "icon": "images/vscode-todo.png",
   "scripts": {
     "test": "mocha --recursive test/"  
@@ -12,15 +12,15 @@
     "theme": "dark"
   },
   "engines": {
-    "vscode": "^0.10.1"
+    "vscode": "^0.10.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MattiasPernhult/vscode-todo.git"
+    "url": "https://github.com/HackerFinn/vscode-todo.git"
   },
-  "homepage": "https://github.com/MattiasPernhult/vscode-todo#readme",
+  "homepage": "https://github.com/HackerFinn/vscode-todo#readme",
   "bugs": {
-    "url": "https://github.com/MattiasPernhult/vscode-todo/issues"
+    "url": "https://github.com/HackerFinn/vscode-todo/issues"
   },
   "license": "MIT",
   "categories": [
@@ -42,7 +42,27 @@
         "command": "extension.showTodos",
         "title": "TODO: List all todos"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "VS Code TODO Configuration",
+      "properties": {
+        "todoIgnore": {
+          "type": "array",
+          "default": null,
+          "description": "Specifies paths to exclude from TODO scans. Uses glob-patterns.",
+          "items": {
+            "type": "string",
+            "default": null
+          }
+        },
+        "todoScanRegex": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "Specifies the regex string to use, when scanning for TODO's."
+        }
+      }
+    }
   },
   "devDependencies": {
     "chai": "^3.5.0",
