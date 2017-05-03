@@ -1,5 +1,5 @@
-[![GitHub issues](https://img.shields.io/github/issues/MattiasPernhult/vscode-todo.svg)](https://github.com/MattiasPernhult/vscode-todo/issues)
-[![Join the chat at https://gitter.im/MattiasPernhult/vscode-todo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MattiasPernhult/vscode-todo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![GitHub issues](https://img.shields.io/github/issues/HackerFinn/vscode-todo.svg)](https://github.com/HackerFinn/vscode-todo/issues)
+[![Join the chat at https://gitter.im/HackerFinn/vscode-todo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/HackerFinn/vscode-todo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # TODO extension for Visual Studio Code
 
@@ -7,6 +7,11 @@ This extension adds functionality to list TODO:s in the project:
 
 - Choosing language
 - Show TODO:s
+
+# Why the fork of vscode-todo?
+
+It was broken and I was getting annoyed that the maintainer was not updating it.
+So here is my fork. I may or may not continue developing it, but at least it works for now. :)
 
 ## Features
 
