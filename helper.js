@@ -43,8 +43,13 @@ helper.getScanRegexForLanguage = function(choosenLanguage, workspaceConfig) {
 };
 
 var getTodoMessage = function(lineText, match) {
-    console.log(match);
-    var todoMessage = lineText.substring(lineText.indexOf(match[1]), lineText.length);
+    var todoMessage = lineText.substring(lineText.indexOf(':'), lineText.length);
+    if (lineText.search('TODO') != -1) {
+        todoMessage = 'TODO: '+todoMessage;
+    }
+    if (lineText.search('FIXME') != -1) {
+        todoMessage = 'FIXME: '+todoMessage;
+    }
     if (todoMessage.length > 60) {
         todoMessage = todoMessage.substring(0, 57).trim();
         todoMessage += '...';
