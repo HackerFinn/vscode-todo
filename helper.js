@@ -6,6 +6,7 @@ var Workspace = vscode.workspace;
 
 var language = require('./language');
 var Todo = require('./models').Todo;
+var isTextOrBinary = require('istextorbinary');
 
 helper.getUsersWorkspaceConfigurations = function() {
   return Workspace.getConfiguration();  
@@ -42,6 +43,7 @@ helper.getScanRegexForLanguage = function(choosenLanguage, workspaceConfig) {
 };
 
 var getTodoMessage = function(lineText, match) {
+    console.log(match);
     var todoMessage = lineText.substring(lineText.indexOf(match[1]), lineText.length);
     if (todoMessage.length > 60) {
         todoMessage = todoMessage.substring(0, 57).trim();
@@ -92,14 +94,16 @@ var findTodosinFiles = function(files, choosenLanguage, scanRegex, done) {
         done({ message: 'no files' }, null, null);
     } else {
         for (var i = 0; i < files.length; i++) {
-            Workspace.openTextDocument(files[i]).then(function(file) {
-                findTodosinSpecifiedFile(file, todos, todosList, scanRegex);
-            }).then(function() {
-                times++;
-                if (times === files.length) {
-                    return done(null, todos, todosList);
-                }
-            });
+            if (isTextOrBinary.isTextSync(files[i].fsPath)) {
+                Workspace.openTextDocument(files[i]).then(function(file) {
+                    findTodosinSpecifiedFile(file, todos, todosList, scanRegex);
+                }).then(function() {
+                    times++;
+                    if (times === files.length) {
+                        return done(null, todos, todosList);
+                    }
+                });
+            }
         }
     }
 };

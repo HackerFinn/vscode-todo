@@ -5,7 +5,7 @@
   "publisher": "HackerFinn",
   "icon": "images/vscode-todo.png",
   "scripts": {
-    "test": "mocha --recursive test/"  
+    "test": "mocha --recursive test/"
   },
   "galleryBanner": {
     "color": "#5c2d91",
@@ -57,7 +57,10 @@
           }
         },
         "todoScanRegex": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "default": null,
           "description": "Specifies the regex string to use, when scanning for TODO's."
         }
@@ -69,6 +72,7 @@
     "vscode": "0.10.x"
   },
   "dependencies": {
+    "istextorbinary": "^2.1.0",
     "opener": "1.4.1"
   }
 }
