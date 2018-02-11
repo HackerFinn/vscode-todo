@@ -26,8 +26,9 @@ helper.getFileExludeForLanguage = function(choosenLanguage, workspaceConfig) {
                 usersExclude += ',' + conf;
             }
         }
-        exclude += usersExclude + '}';
+        exclude += usersExclude;
     }
+    exclude += '}';
     return exclude;
 };
 
@@ -104,14 +105,16 @@ var findTodosinFiles = function(files, choosenLanguage, scanRegex, done) {
             if (isTextOrBinary.isTextSync(files[i].fsPath)) {
                 Workspace.openTextDocument(files[i]).then(function(file) {
                     findTodosinSpecifiedFile(file, todos, todosList, scanRegex);
-                }).then(function() {
-                    times++;
-                    if (times === files.length) {
-                        return done(null, todos, todosList);
-                    }
                 });
+                // .then(function() {
+                //     times++;
+                //     if (times === files.length) {
+                //         return done(null, todos, todosList);
+                //     }
+                // });
             }
         }
+        return done(null, todos, todosList);
     }
 };
 
